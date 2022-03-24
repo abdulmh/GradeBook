@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # Rails automatically maps the index method to a web page view names
   # index.html.erb and serves the webpage to the browser where its
   # rendered.
-  get "grades" => "grades#index"
+  
+  get "students" => "students#index"
 end

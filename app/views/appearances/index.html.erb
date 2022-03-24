@@ -1,0 +1,27 @@
+<h1>Assign Student to Course</h1>
+<form action="/appearances" method="post">
+	<div>
+		<label>Student:</label>
+		<select name="appearance[student_id]">
+			<option></option>
+			<% @students.each do |student| %>
+			<option value="<%= student.id %>"><%= student.full_name %></option>
+			<% end %>
+		</select>
+	</div>
+	<div>
+		<label>Email:</label>
+		<select name="email[email_id]">
+			<option></option>
+			<% @email.each do |email| %>
+			<option value="<%= email.id %>"><%= student.email %> </option>
+			<% end %>
+		</select>
+	</div>
+	<input type="submit" value="Create">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %></div>
+	<% end %>
+<%end%>

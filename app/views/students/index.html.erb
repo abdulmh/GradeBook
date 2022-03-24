@@ -1,0 +1,25 @@
+<h1>View <%= pluralize(@students.count, "Student") %> </h1>
+
+<table class="table table-striped">
+	<thead>
+		<th scope="col">Student Name</th>
+		<th scope="col">Email</th>
+		<th scope="col">Actions</th>
+	</thead>
+	<tbody>
+		<% @students.each do |student| %>
+		<tr>
+			<td><%= student.full_name%></td>
+			<td><%= student.email%></td>
+			<td>
+				
+				<a href="/students/<%= student.id %>">Show</a> |
+				<a href="/students/<%= student.id %>/edit">Edit</a> |
+				<a href="/students/<%= student.id %>/delete">Delete</a>
+
+			</td>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
+<a href="/students/new">Create student</a>
