@@ -1,0 +1,19 @@
+<h1>View <%= pluralize(@courses.count, "Course") %></h1>
+<table class="table table-striped">
+	<thead>
+		<th scope="col">Course Name</th>
+	</thead>
+	<tbody>
+		<% @courses.each do |course| %>
+		<tr>
+			<td><%= course.course_name %></td>
+			<td>
+				<a href="/courses/<%= course.id %>">Show</a>
+				<a href="/courses/<%= course.id %>/edit">Edit</a>
+				<a href="/courses/<%= course.id %>/delete">Delete</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/courses/new">Create Course</a>

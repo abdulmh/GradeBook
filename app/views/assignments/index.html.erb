@@ -1,0 +1,34 @@
+<!--
+	pluralize is a Ruby method that returns the plural form of the word in the string.
+	if the first parameter, count, is specified, the sigular form of the string will be returned
+	if count==1. for any other value of count, the plural form of the string will be returned.
+	count is a Ruby method that returns the numner of elements in the array of assignment objects.
+-->
+<h1>View <%= pluralize(@assignments.count, "Assignment") %></h1>
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Due Date</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<!-- 
+			each is a Ruby method that iterates over a code block for each element in the
+			array of assignment objects
+		-->
+		<% @assignments.each do |assignment| %>
+		<tr>
+			<td><%= assignment.title %></td>
+			<td><%= assignment.duration %></td>
+			<td><%= assignment.rating %></td>
+			<td><%= assignment.release_date %></td>
+			<td>
+				<a href="/assignments/<%= assignment.id %>">Show</a>
+				<a href="/assignments/<%= assignment.id %>/edit">Edit</a>
+				<a href="/assignments/<%= assignment.id %>/delete">Delete</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/assignments/new">Create assignment</a>

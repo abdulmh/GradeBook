@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   # Rails automatically maps the index method to a web page view names
   # index.html.erb and serves the webpage to the browser where its
   # rendered.
-  get "grades" => "grades#index"
+  get "courses" => "courses#index"
+  get "courses/new" => "courses#new"
+  # When a post request is made for the courses URL,
+  # Rails envokes the create method in the courses Ruby controller class
+  post "courses" => "courses#create"
 end
