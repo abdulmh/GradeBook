@@ -1,1 +1,13 @@
-delete.html.erb
+<h1> Delete <%= @student.fullname %> <%= @student.email %></h1>
+<form action="/students/<%= @student.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<div>
+		<label>Full Name:</label>
+		<input type="text" name="student[fullname]" value="<%= @student.fullname %>" disabled>
+	</div>
+	<div>
+		<label>Email:</label>
+		<input type="text" name="student[email]" value="<%= @student.email %>" disabled>
+	</div>
+	<input type="submit" value="Delete">
+</form>

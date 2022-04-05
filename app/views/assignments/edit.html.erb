@@ -1,0 +1,17 @@
+<h1> Edit <%= @assignment.assignmentname %> <%= @assignment.totalpoints %></h1>
+<form action="/assignments/<%= @assignment.id %>" method="post">
+	<div>
+		<label>Assignment Name:</label>
+		<input type="text" name="assignment[assignmentname]" value="<%= @assignment.assignmentname %>">
+	</div>
+	<div>
+		<label>Total Points:</label>
+		<input type="text" name="assignment[totalpoints]" value="<%= @assignment.totalpoints %>">
+	</div>
+	<input type="submit" value="Update">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %></div>
+	<% end %>
+<%end%>

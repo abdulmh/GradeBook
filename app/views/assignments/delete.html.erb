@@ -1,0 +1,13 @@
+<h1> Delete <%= @assignment.assignmentname %> <%= @assignment.totalpoints %></h1>
+<form action="/assignments/<%= @assignment.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<div>
+		<label>Assignment Name:</label>
+		<input type="text" name="assignment[assignmentname]" value="<%= @assignment.assignmentname %>" disabled>
+	</div>
+	<div>
+		<label>Total Points:</label>
+		<input type="text" name="assignment[totalpoints]" value="<%= @assignment.totalpoints %>" disabled>
+	</div>
+	<input type="submit" value="Delete">
+</form>
