@@ -3,11 +3,11 @@ class CoursesController < ApplicationController
     # index method gets mapped to the courses index.html.erb.
     def index 
         # call all method on Course model class.
-        # all method selects all of the data in the actor table
+        # all method selects all of the data in the course table
         # and returns the data as an array of objects.
         # store the array of objects in an instance variable.
         # instance variable is available to courses index.html.erb.
-        @courses = Course.all
+        @courses = Course2.all
     end
     
     # new method gets called when the courses new URL is requested.
@@ -23,10 +23,10 @@ class CoursesController < ApplicationController
         # new.html.erb
         # constructor creates Course model object which is stored
         # in variable
-        course = Course.new(course_params)
+        course = Course2.new(course_params)
         # call save method on Course object
         # save metod inserts the data in the Course model object
-        # into the actor table
+        # into the course table
         if course.save
             # if the save method succeeds, request the courses URL
             # which will rendor the courses index.html.erb in the browser
@@ -47,11 +47,11 @@ class CoursesController < ApplicationController
     def show
         # call find method on Course model class giving it the id sent
         # in the request
-        # find method selects all of the data in the actor table where
+        # find method selects all of the data in the course table where
         # the id is equal to the id sent in the request 
-        # store the array of actor objects in an instance variable 
+        # store the array of course objects in an instance variable 
         # instance variable is available to courses show.html.erb
-        @assignments = Course.find(params[:id]).assignments
+        @assignments = Course2.find(params[:id]).assignments
     end
 
     # edit metod gets called when the courses/:id/edit URL is requested
@@ -59,12 +59,12 @@ class CoursesController < ApplicationController
     def edit
         # call find method on Course model class giving it the id sent
         # in the request
-        # the find method selects all of the data in the actor table where
+        # the find method selects all of the data in the course table where
         # the id is equal to the id sent in the request
         # the selected data will be returned as an object
         # the object will be stored in an instance variable 
         # that will be available to the edit.html.erb 
-        @course = Course.find(params[:id])
+        @course = Course2.find(params[:id])
     end
 
     # update method gets called when the update button is pushed on the 
@@ -73,14 +73,14 @@ class CoursesController < ApplicationController
 
         # call find method on Course model clss givng it the id sent in the 
         # request
-        # find method selects all of the data in the actor table where
+        # find method selects all of the data in the course table where
         # the id is equal to the id sent in the request
         # the selected data will be returned as an object
         # the object will be stored in a variable
-        course = Course.find(params[:id])
+        course = Course2.find(params[:id])
         # call update method on Course object giving it the first name and
         # last name parameters input in the courses edit.html.erb
-        # update method updates the data in the actor table use the parameters
+        # update method updates the data in the course table use the parameters
         if course.update(course_params)
             # if the updae method succeeds, request the courses URL which
             # will render the courses index.html.erb in the browser
@@ -103,24 +103,24 @@ end
 
         # call find method on Course model class giving it the id sent
         # in the request
-        # the find method selects all of the data in the actor table where
+        # the find method selects all of the data in the course table where
         # the id is equal to the id sent in the request
         # the selected data will be returned as an object
         # the object will be stored in an instance variable 
         # that will be available to the delete.html.erb 
-        @course = Course.find(params[:id])
+        @course = Course2.find(params[:id])
     end
 
     # destroy metod gets called when the Delete button is pushed on the 
     # courses delete.html.erb
     def destroy
-        course = Course.find(params[:id])
+        course = Course2.find(params[:id])
         course.destroy
         redirect_to "/courses"
     end
 
     private
-    def actor_params
+    def course_params
         # params in a Rails object that gets the specified request
         # parameters 
         params.require(:course).permit(:course_name)

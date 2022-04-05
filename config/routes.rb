@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   # When a post request is made for the courses URL,
   # Rails envokes the create method in the courses Ruby controller class
   post "courses" => "courses#create"
+  get "courses/:id/edit" => "courses#edit"
+  post "courses/:id" => "courses#update"
+  get "courses/:id/delete" => "courses#delete"
+  delete "courses/:id" => "courses#destroy"
 end

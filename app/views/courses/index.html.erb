@@ -8,12 +8,14 @@
 		<tr>
 			<td><%= course.course_name %></td>
 			<td>
-				<a href="/courses/<%= course.id %>">Show</a>
-				<a href="/courses/<%= course.id %>/edit">Edit</a>
-				<a href="/courses/<%= course.id %>/delete">Delete</a>
+				<a href="/courses/<%= course.id %>/edit">Edit | </a>
+				<a href="/courses/<%= course.id %>/delete">Delete | </a>
+				<a href="/courses/<%= course.id %>/students">Students | </a>
+				<a href="/courses/<%= course.id %>/assignments">Assignments</a>
 			</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<a href="/courses/new">Create Course</a>
+<a href="/courses/new" input type="submit" value="Create Course" class="btn btn-primary">Create Course</a>
+
