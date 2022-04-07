@@ -10,8 +10,9 @@
 	</div>
 	<input type="submit" value="Update">
 </form>
+
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
-	<div><%= e %></div>
+	<div class="alert alert-danger"><%= e %></div>
 	<% end %>
-<%end%>
+<% end %>
