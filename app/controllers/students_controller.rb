@@ -68,7 +68,7 @@ class StudentsController < ApplicationController
 		# call update method on student object giving it the first name and 
 		# last name parameters input in the student edit.html.erb
 		# update method updates the data inthe student table use the parameters
-		if Student.update(student_params)
+		if student.update(student_params)
 			# if the update method suceeds, request the students URL which 
 			# will render the students index.html.erb in the browser 
 			redirect_to "/students"
@@ -112,4 +112,3 @@ private
 	end
 
 end
-

@@ -1,0 +1,16 @@
+<h1>View <%= pluralize(@students.count, "Student") %></h1>
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Email</th>
+	</thead>
+	<tbody>
+		<% @students.each do |student| %>
+		<tr>
+			<td><%= student.fullname %></td>
+			<td><%= student.email %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/courses">View Courses</a>

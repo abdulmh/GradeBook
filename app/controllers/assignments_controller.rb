@@ -68,7 +68,7 @@ class AssignmentsController < ApplicationController
 		# call update method on assignment object giving it the first name and 
 		# last name parameters input in the assignment edit.html.erb
 		# update method updates the data inthe assignment table use the parameters
-		if Assignment.update(assignment_params)
+		if assignment.update(assignment_params)
 			# if the update method suceeds, request the assignments URL which 
 			# will render the assignments index.html.erb in the browser 
 			redirect_to "/assignments"

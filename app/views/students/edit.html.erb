@@ -1,4 +1,4 @@
-<h1> Edit <%= @student.fullname %> <%= @student.email %></h1>
+<h1> Edit <%= @student.fullname %></h1>
 <form action="/students/<%= @student.id %>" method="post">
 	<div>
 		<label>Full Name:</label>
@@ -10,8 +10,9 @@
 	</div>
 	<input type="submit" value="Update">
 </form>
+
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
-	<div><%= e %></div>
+	<div class="alert alert-danger"><%= e %></div>
 	<% end %>
-<%end%>
+<% end %>

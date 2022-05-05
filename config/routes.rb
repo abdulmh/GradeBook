@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   post "courses" => "courses#create"
   get "courses/:id/edit" => "courses#edit"
   post "courses/:id" => "courses#update"
+  get "courses/:id" => "courses#show"
   get "courses/:id/delete" => "courses#delete"
   delete "courses/:id" => "courses#destroy"
   get "students" => "students#index"
+  get "students/:id" => "students#show"
   get "students/new" => "students#new"
   get "students/:id/edit" => "students#edit"
   post "students/:id" => "students#update"
@@ -30,4 +32,6 @@ Rails.application.routes.draw do
   post "assignments" => "assignments#create"
   get "assignments/:id/delete" => "assignments#delete"
   delete "assignments/:id" => "assignments#destroy"
+  get "roster" => "roster#index"
+  post "roster" => "roster#create"
 end
