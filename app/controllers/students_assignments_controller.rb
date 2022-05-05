@@ -40,7 +40,7 @@ class StudentsAssignmentsController < ApplicationController
 		end
 		end	
 
-		# show method gets called when the actors/:id URL is requested 
+	# show method gets called when the actors/:id URL is requested 
 	# show method is mapped to the actors show.html.erb
 	def show 
 		# call find method on Actor model class giving it the id sent 

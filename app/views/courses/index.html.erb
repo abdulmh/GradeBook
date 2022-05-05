@@ -3,17 +3,16 @@
 	<thead class="table-dark">
 		<th scope="col">Course Name</th>
 		<th scope="col">Actions</th>
-		<th>Actions</th>
 	</thead>
 	<tbody>
 		<% @courses.each do |course| %>
 		<tr>
 			<td><%= course.course_name %></td>
 			<td>
-				<a href="/courses/<%= course.id %>/edit">Edit | </a>
-				<a href="/courses/<%= course.id %>/delete">Delete | </a>
-				<a href="/courses/<%= course.id %>">Students | </a>
-				<a href="/courses/<%= course.id %>/students_assignments">Add Assignment | </a>
+				<a href="/courses/<%= course.id %>/edit">Edit</a> |
+				<a href="/courses/<%= course.id %>/delete">Delete</a> |
+				<a href="/courses/<%= course.id %>">Students</a> |
+				<a href="/courses/<%= course.id %>/students_assignments">Add Assignment</a> |
 				<a href="/courses/<%= course.id %>/students_assignments/show">View Assignment</a>
 			</td>
 		</tr>
