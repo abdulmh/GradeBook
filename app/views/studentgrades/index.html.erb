@@ -1,0 +1,21 @@
+<h1>View Student Grades</h1>
+<table class="table table-striped">
+	<thead>
+		<th scope="col">Student Name</th>
+		<th scope="col">Grades</th>
+	</thead>
+	<tbody>
+		<% @students.each do |student| %>
+		<tr>
+			<td><%= student.fullname%></td>
+			<td>
+			
+			</td>
+			<td>
+				<a href="/studentgrades/gradeStudentAssignment" input type="submit" value="Grade" class="btn btn-primary" button style="width:75px">Grade</a>
+			</td>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
+

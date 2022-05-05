@@ -1,13 +1,15 @@
-<h1> Delete <%= @assignment.assignmentname %></h1>
+<h1> Delete <%= @assignment.assignmentname %> </h1>
 <form action="/assignments/<%= @assignment.id %>" method="post">
 	<input type="hidden" name="_method" value="delete">
-	<div>
+	<div class="form-group">
 		<label>Assignment Name:</label>
-		<input type="text" name="assignment[assignmentname]" value="<%= @assignment.assignmentname %>" disabled>
+		<input type="text" name="assignment[assignmentname]" value="<%= @assignment.assignmentname %>" class="form-control" disabled>
 	</div>
 	<div>
 		<label>Total Points:</label>
-		<input type="text" name="assignment[totalpoints]" value="<%= @assignment.totalpoints %>" disabled>
+		<input type="text" name="assignment[totalpoints]" value="<%= @assignment.totalpoints %>" class="form-control" disabled>
 	</div>
+	<input type="submit" value="Delete" class="btn btn-primary">
+
 	<input type="submit" value="Delete" class="btn btn-primary" button style="width:150px">
 </form>

@@ -2,6 +2,7 @@
 <table class="table table-bordered border-primary">
 	<thead class="table-dark">
 		<th scope="col">Course Name</th>
+		<th scope="col">Actions</th>
 		<th>Actions</th>
 	</thead>
 	<tbody>
@@ -9,13 +10,19 @@
 		<tr>
 			<td><%= course.course_name %></td>
 			<td>
-				<a href="/courses/<%= course.id %>/edit">Edit</a> |
-				<a href="/courses/<%= course.id %>/delete">Delete</a> |
-				<a href="/courses/<%= course.id %>">Students</a> |
-				<a href="/courses/<%= course.id %>/assignments">Assignments</a>
+				<a href="/courses/<%= course.id %>/edit">Edit | </a>
+				<a href="/courses/<%= course.id %>/delete">Delete | </a>
+				<a href="/courses/<%= course.id %>">Students | </a>
+				<a href="/courses/<%= course.id %>/students_assignments">Add Assignment | </a>
+				<a href="/courses/<%= course.id %>/students_assignments/show">View Assignment</a>
 			</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
+<<<<<<< HEAD
 <a href="/courses/new" input type="submit" value="Create Course" class="btn btn-primary" button style="width:150px">Create Course</a>
+=======
+<a href="/courses/new" input type="submit" value="Create Course" class="btn btn-primary" button style="width:150px">Create Course</a>
+<a href="/courses/new" input type="submit" value="Create Course" class="btn btn-primary" button style="width:200px">Create Course</a>
+>>>>>>> c32f93f9421c4b7f9b38e36100cab29a5c21f42b

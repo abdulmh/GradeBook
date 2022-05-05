@@ -7,7 +7,7 @@ class AssignmentsController < ApplicationController
 		# and returns the data as an array of objects. 
 		# store the array of objects in an instance variable. 
 		# instance variable is available to assignments index.html.erb
-		@assignments = Assignment.all
+		@assignments = Assignment2.all
 	end
 
 	# new method gets called when the assignments/new URL is requested.
@@ -23,7 +23,7 @@ class AssignmentsController < ApplicationController
 		# new.html.erb
 		# constructor creates assignment model object which is stored 
 		# in variable 
-		assignment = Assignment.new(assignment_params)
+		assignment = Assignment2.new(assignment_params)
 		# call save method on assignment object 
 		# save method inserts the data in the assignment model object 
 		# into the assignment table 
@@ -53,7 +53,7 @@ class AssignmentsController < ApplicationController
 		# the selected data will be returned as an object 
 		# the object will be stored in an instance variable that will be 
 		# available to the edit.html.erb
-		@assignment = Assignment.find(params[:id])
+		@assignment = Assignment2.find(params[:id])
 	end
 
 	# update method gets called when the update button 
@@ -64,7 +64,7 @@ class AssignmentsController < ApplicationController
 		# id is equal to the id sent in the request 
 		# the selected data will be returned as an object 
 		# the object will be stored in a variable 
-		assignment = Assignment.find(params[:id])
+		assignment = Assignment2.find(params[:id])
 		# call update method on assignment object giving it the first name and 
 		# last name parameters input in the assignment edit.html.erb
 		# update method updates the data inthe assignment table use the parameters
@@ -76,9 +76,9 @@ class AssignmentsController < ApplicationController
 			# if the update method fails, get the full messages asscioted with the errors
 			# store them in the Rails flash object named errors so the full messages may be displayed
 			# in the request URL 
-			flash[:errors] = Assignment.errors.full_messages
+			flash[:errors] = Assignment2.errors.full_messages
 			# request the assignments/:id/edit URL which will render the assignments edit.html.erb
-			redirect_to "/assignments/#{Assignment.id}/edit"
+			redirect_to "/assignments/#{Assignment2.id}/edit"
 		end
 		end	
 
@@ -93,13 +93,13 @@ class AssignmentsController < ApplicationController
 		# the selected data will be returned as an object 
 		# the object will be stored in an instance variable that will be 
 		# available to the delete.html.erb
-		@assignment = Assignment.find(params[:id])
+		@assignment = Assignment2.find(params[:id])
 		end
 
 		# destroy method gets called when the Delete button is pushed on the 
 		# assignments delete.html.erb
 		def destroy
-			assignment = Assignment.find(params[:id])
+			assignment = Assignment2.find(params[:id])
 			assignment.destroy
 			redirect_to "/assignments"
 		end

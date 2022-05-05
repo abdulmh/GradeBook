@@ -32,6 +32,12 @@ Rails.application.routes.draw do
   post "assignments" => "assignments#create"
   get "assignments/:id/delete" => "assignments#delete"
   delete "assignments/:id" => "assignments#destroy"
+  get "courses/:id/students_assignments" => "students_assignments#index"
+  post "students_assignments/:id" => "students_assignments#update"
+  get "assignments/:id" => "studentgrades#index"
+  get "studentgrades/gradeStudentAssignment" => "studentgrades#gradeStudentAssignment"
+  get "courses/:id/students_assignments/show" => "students_assignments#show"
+  get "studentgrades/index" => "studentgrades#index"
   get "roster" => "roster#index"
   post "roster" => "roster#create"
 end

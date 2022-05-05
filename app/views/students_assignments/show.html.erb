@@ -1,0 +1,16 @@
+<h1> View Course Assignments </h1>
+<table class="table table-striped">
+	<thead>
+		<th scope="col">Assignments: </th>
+		<th scope="col">Total Points: </th>
+		</thead>
+		<tbody>
+			<% @assignments.each do |assignment| %>
+
+			<tr>
+			<td><%= assignment.assignmentname%></td>
+			<td><%= assignment.totalpoints%></td>
+		</tr>
+			<% end %>
+		</tbody>
+	</table>
