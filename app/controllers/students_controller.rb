@@ -104,6 +104,8 @@ class StudentsController < ApplicationController
 			redirect_to "/students"
 		end
 
+
+
 private	
 	def student_params
 		# para is a Rails object that gets the specfied request 
