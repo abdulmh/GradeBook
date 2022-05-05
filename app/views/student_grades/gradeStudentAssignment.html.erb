@@ -1,0 +1,11 @@
+<h1>Grade Student Assignment</h1>
+<table class="table table-striped">
+	<thead>
+		<th scope="col">Points:</th>
+		</thead>
+		<tbody>
+		<% @students.each do |student| %>
+		<tr>
+			<td><%= student.fullname%></td>
+		</tr>
+	</table>

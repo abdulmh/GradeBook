@@ -1,0 +1,13 @@
+<h1>Add Assignment to Course</h1>
+<form action="/students_assignments/<%= @course.id %>" method="post">
+	<div>
+		<label>Assign:</label>
+		<select name="assignment[id]">
+			<option></option>
+			<% @assignments.each do |assignments| %>
+			<option class="dropdown"value="<%= assignments.id %>"><%= assignments.assignmentname %> 		</option>
+			<% end %>
+		</select>
+	</div>
+	<input type="submit" value="Add" class="btn btn-primary" button style="width:200px">
+</form>

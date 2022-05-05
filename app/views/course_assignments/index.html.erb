@@ -1,13 +1,15 @@
-<h1>View Student Gardes</h1>
+<h1>View Course Assignments</h1>
+
 <table class="table table-striped">
 	<thead>
-		<th scope="col">Student Name</th>
+		<th scope="col">Course Name</th>
 		<th scope="col">Actions</th>
 	</thead>
 	<tbody>
 		<% @students.each do |student| %>
 		<tr>
 			<td><%= student.fullname%></td>
+			<td><%= student.email%></td>
 			<td>
 				
 				
@@ -19,4 +21,3 @@
 		</tr>
 	</tbody>
 </table>
-<a href="/students/new" input type="submit" value="Create Course" class="btn btn-primary" button style="width:200px">Create student</a>

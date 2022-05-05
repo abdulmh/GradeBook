@@ -2,6 +2,7 @@
 <table class="table table-striped">
 	<thead>
 		<th scope="col">Course Name</th>
+		<th scope="col">Actions</th>
 	</thead>
 	<tbody>
 		<% @courses.each do |course| %>
@@ -10,8 +11,9 @@
 			<td>
 				<a href="/courses/<%= course.id %>/edit">Edit | </a>
 				<a href="/courses/<%= course.id %>/delete">Delete | </a>
-				<!-- <a href="/courses/<%= course.id %>/students">Students | </a>
-				<a href="/courses/<%= course.id %>/assignments">Assignments</a> -->
+				<a href="/courses/<%= course.id %>/students">Students | </a>
+				<a href="/courses/<%= course.id %>/students_assignments">Add Assignment | </a>
+				<a href="/courses/<%= course.id %>/students_assignments/show">View Assignment</a>
 			</td>
 		</tr>
 		<% end %>
