@@ -51,7 +51,7 @@ class CoursesController < ApplicationController
         # the id is equal to the id sent in the request 
         # store the array of course objects in an instance variable 
         # instance variable is available to courses show.html.erb
-        @assignments = Course2.find(params[:id]).assignments
+        @students = Course2.find(params[:id]).students
     end
 
     # edit metod gets called when the courses/:id/edit URL is requested

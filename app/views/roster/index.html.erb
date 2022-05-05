@@ -1,0 +1,27 @@
+<h1>Assign Student to Course</h1>
+<form action="/roster" method="post">
+	<div>
+		<label>Student:</label>
+		<select name="roster[student_id]">
+			<option></option>
+			<% @student.each do |student| %>
+			<option value ="<%= student.id %>"><%= student.fullname %></option>
+			<% end %>
+		</select>
+	</div>
+	<div>
+		<label>Course:</label>
+		<select name="roster[course2_id]">
+			<option></option>
+			<% @course2.each do |course2| %>
+			<option value ="<%= course2.id %>"><%= course2.course_name %></option>
+			<% end %>
+		</select>
+	</div>
+	<input type="submit" value="Create">
+</form>
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<div><%= e %></div>
+	<% end %>
+<% end %>
