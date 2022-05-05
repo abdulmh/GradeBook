@@ -1,5 +1,4 @@
 <h1>View Course Assignments</h1>
-
 <table class="table table-striped">
 	<thead>
 		<th scope="col">Course Name</th>
@@ -10,12 +9,9 @@
 		<tr>
 			<td><%= student.fullname%></td>
 			<td><%= student.email%></td>
-			<td>
-				
-				
+			<td>	
 				<a href="/students/<%= student.id %>/edit">Edit</a> |
 				<a href="/students/<%= student.id %>/delete">Delete</a>
-
 			</td>
 			<% end %>
 		</tr>
